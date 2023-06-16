@@ -178,8 +178,21 @@ const keys = {
 
 decreaseTimer()
 
+    let spawnBuffer = 500
+    let fps = 60
+    let fpsInterval = 1000 / fps
+    let msPrev = window.performance.now()
+
 function animate(){
     window.requestAnimationFrame(animate)
+
+    const msNow = window.performance.now()
+    const elapsed = msNow - msPrev
+    if (elapsed < 16.66)
+    return
+
+    msPrev = msNow - (elapsed % 16.66) // 3.34
+
     c.fillStyle = 'black'
     c.fillRect(0, 0, canvas.width, canvas.height)
     background.update()

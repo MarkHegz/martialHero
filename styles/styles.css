@@ -41,7 +41,7 @@ p {
 .innerContainer {
     position: absolute;
     display: flex;
-    width: 75%;
+    width: 1024px;
     align-items: center;
     padding: 20px;
 }
